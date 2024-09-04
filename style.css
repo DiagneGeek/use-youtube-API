@@ -7,7 +7,7 @@
 }
 body {
     height: 100svh;
-    background: #10121f;
+    background: linear-gradient(blue,black);
     padding-top: 30px;
 }
 section{
