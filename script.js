@@ -39,7 +39,7 @@ function createImage(input,parent) {
    image.className="imageToSave";
    image.src = URL.createObjectURL(input.files[0]);
    parent.append(image);
-   
+   parent.append(image.src)
 }
 
 function addNewImage(input) {
