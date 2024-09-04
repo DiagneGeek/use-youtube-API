@@ -8,7 +8,7 @@ function redirect(landingPage,imagesPage) {
 }
 redirect(document.querySelector(".landing"),document.querySelector(".images"));
 
-
+saveImages(document.querySelector(".images"))
 function displayImagesToSave(images) {
    images.innerHTML = localStorage.getItem("saveImages")
 }
@@ -55,7 +55,6 @@ addNewImage(document.querySelector(".images .i-input"));
 function saveImages(imagesPage) {
     localStorage.setItem("saveImages",imagesPage.innerHTML);
 }
-saveImages(document.querySelector(".images"));
 
 /* ___________<<<<<<<<<<< integer with images >>>>>>>>>____________*/
 
