@@ -55,6 +55,7 @@ addNewImage(document.querySelector(".images .i-input"));
 function saveImages(imagesPage) {
     localStorage.setItem("saveImages",imagesPage.innerHTML);
 }
+saveImages(document.querySelector(".images");
 
 /* ___________<<<<<<<<<<< integer with images >>>>>>>>>____________*/
 
