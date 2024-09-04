@@ -80,7 +80,7 @@ section{
        z-index:6;
        opacity:0;
    }
-   .imageToSave{
+   img{
        width: 150px;
        height: 150px;
        object-fit:cover;
