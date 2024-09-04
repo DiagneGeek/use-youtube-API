@@ -12,7 +12,7 @@ redirect(document.querySelector(".landing"),document.querySelector(".images"));
 function displayImagesToSave(images) {
    images.innerHTML = localStorage.getItem("saveImages")
 }
-displayImagesToSave(document.querySelector(".images"));
+//displayImagesToSave(document.querySelector(".images"));
 
 
 function getUser(getStartedBtn,landingPage,imagesPage) {
