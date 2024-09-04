@@ -8,7 +8,7 @@ function redirect(landingPage,imagesPage) {
 }
 redirect(document.querySelector(".landing"),document.querySelector(".images"));
 
-saveImages(document.querySelector(".images"))
+//saveImages(document.querySelector(".images"))
 function displayImagesToSave(images) {
    images.innerHTML = localStorage.getItem("saveImages")
 }
@@ -37,7 +37,7 @@ function createImage(input,parent) {
    let image = document.createElement("img");
    image.className="imageToSave";
    image.src = URL.createObjectURL(input.files[0]);
-   parent.append(image,localStorage.getItem("saveImages"));
+   parent.append(image);
 }
 
 
@@ -45,6 +45,7 @@ function addNewImage(input) {
    input.onchange = () => {
       createImage(input,document.querySelector(".images"));
       saveImages(document.querySelector(".images"));
+      displayImagesToSave(document.querySelector(".images"))
       zoomImages(document.querySelectorAll(".imageToSave"));
       
    }
