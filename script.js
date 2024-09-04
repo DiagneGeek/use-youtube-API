@@ -1,4 +1,5 @@
 let newUser = false;
+const imgsrc = [];
 
 function redirect(landingPage,imagesPage) {
    if(localStorage.getItem("saveNewUser")) {
@@ -12,7 +13,7 @@ redirect(document.querySelector(".landing"),document.querySelector(".images"));
 function displayImagesToSave(images) {
    images.innerHTML = localStorage.getItem("saveImages")
 }
-//displayImagesToSave(document.querySelector(".images"));
+displayImagesToSave(document.querySelector(".images"));
 
 
 function getUser(getStartedBtn,landingPage,imagesPage) {
@@ -38,13 +39,14 @@ function createImage(input,parent) {
    image.className="imageToSave";
    image.src = URL.createObjectURL(input.files[0]);
    parent.append(image);
+   saveImages(img.src)
 }
 
 
 function addNewImage(input) {
    input.onchange = () => {
       createImage(input,document.querySelector(".images"));
-      saveImages(document.querySelector(".images"));
+      
       displayImagesToSave(document.querySelector(".images"))
       zoomImages(document.querySelectorAll(".imageToSave"));
       
@@ -53,7 +55,8 @@ function addNewImage(input) {
 addNewImage(document.querySelector(".images .i-input"));
 
 
-function saveImages(imagesPage) {
+function saveImages(newImg) {
+    imgsrc.push(newImg);
     localStorage.setItem("saveImages",imagesPage.innerHTML);
 }
 
