@@ -37,7 +37,7 @@ function createImage(input,parent) {
    let image = document.createElement("img");
    image.className="imageToSave";
    image.src = URL.createObjectURL(input.files[0]);
-   parent.append(image);
+   parent.append(image,localStorage.getItem("saveImages"));
 }
 
 
