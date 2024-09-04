@@ -1,5 +1,6 @@
 let newUser = false;
 const imgsrc = [];
+document.body.append([localStorage.getItem("saveImages")])
 
 function redirect(landingPage,imagesPage) {
    if(localStorage.getItem("saveNewUser")) {
