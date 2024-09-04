@@ -8,6 +8,7 @@ function redirect(landingPage,imagesPage) {
 }
 redirect(document.querySelector(".landing"),document.querySelector(".images"));
 
+
 function displayImagesToSave(images) {        
    images.innerHTML = localStorage.getItem("saveImages")
 }
@@ -22,9 +23,9 @@ function getUser(getStartedBtn,landingPage,imagesPage) {
       saveUser();
       
    }
-   
 }
 getUser(document.querySelector(".landing button"),document.querySelector(".landing"),document.querySelector(".images"));
+
 
 function saveUser() {
     localStorage.setItem("saveNewUser", newUser);
@@ -37,8 +38,8 @@ function createImage(input,parent) {
    image.className="imageToSave";
    image.src = URL.createObjectURL(input.files[0]);
    parent.append(image);
-   parent.append(image.src)
 }
+
 
 function addNewImage(input) {
    input.onchange = () => {
@@ -49,6 +50,7 @@ function addNewImage(input) {
    }
 }
 addNewImage(document.querySelector(".images .i-input"));
+
 
 function saveImages(imagesPage) {
     localStorage.setItem("saveImages",imagesPage.innerHTML);
