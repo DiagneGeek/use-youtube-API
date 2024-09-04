@@ -8,10 +8,8 @@ function redirect(landingPage,imagesPage) {
 }
 redirect(document.querySelector(".landing"),document.querySelector(".images"));
 
-function displayImagesToSave(images) {
-    if(localStorage.getItem("saveImages") != "") {
-        images.innerHTML = localStorage.getItem("saveImages")
-    }
+function displayImagesToSave(images) {        
+   images.innerHTML = localStorage.getItem("saveImages")
 }
 //displayImagesToSave(document.querySelector(".images"));
 
