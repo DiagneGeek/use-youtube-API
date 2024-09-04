@@ -11,7 +11,7 @@ redirect(document.querySelector(".landing"),document.querySelector(".images"));
 
 //saveImages(document.querySelector(".images"))
 function displayImagesToSave(images) {
-   let srcs = localStorage.getItem("saveImages");
+   let srcs = [localStorage.getItem("saveImages")];
    for(let i=0;i<srcs.length;i++){
       let image = document.createElement("img");
       image.src = srcs[i];
