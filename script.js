@@ -11,7 +11,12 @@ redirect(document.querySelector(".landing"),document.querySelector(".images"));
 
 //saveImages(document.querySelector(".images"))
 function displayImagesToSave(images) {
-   images.innerHTML = localStorage.getItem("saveImages")
+   let srcs = localStorage.getItem("saveImages");
+   for(let i=0;i<srcs.length;i++){
+      let image = document.createElement("img");
+      image.src = srcs[i];
+      images.append(image)
+   }
 }
 displayImagesToSave(document.querySelector(".images"));
 
@@ -39,7 +44,7 @@ function createImage(input,parent) {
    image.className="imageToSave";
    image.src = URL.createObjectURL(input.files[0]);
    parent.append(image);
-   saveImages(img.src)
+   saveImages(img.src.slice(5,img.src.length))
 }
 
 
@@ -57,7 +62,7 @@ addNewImage(document.querySelector(".images .i-input"));
 
 function saveImages(newImg) {
     imgsrc.push(newImg);
-    localStorage.setItem("saveImages",imagesPage.innerHTML);
+    localStorage.setItem("saveImages",imgsrc);
 }
 
 /* ___________<<<<<<<<<<< integer with images >>>>>>>>>____________*/
