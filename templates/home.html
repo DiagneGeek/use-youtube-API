@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}"
 </head>
 <body>
-    <a href="{{ video_link }}">
-    <img src="{{ data[0][0] }}" width="100%"/>
-    <p>{{  data[0][1]  }}</p>
-    <strong> {{ data[0][2] }}</strong>
+    <a href="{{ video_link }}" class="thumbnail">
+    <img src="{{ img }}"/>
+    <p>{{ video_title  }}</p>
+    <strong> {{ channel_title }}</strong>
     </a>
-    {% endfor %}
+     <p>{{channel}}</p>
 </body>
 </html>
