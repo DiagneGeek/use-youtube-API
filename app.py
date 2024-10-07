@@ -6,7 +6,7 @@ import requests
 app = Flask(__name__)
 
 
-key = 'AIzaSyDszwHyMkqcPjJtH6Qn2cpoPcGzzqYgu3E'
+key = key
 
 
 @app.route('/')
